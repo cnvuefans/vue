@@ -31,6 +31,7 @@
         <input type="checkbox" name="" id="isTrue" v-model="isTrue">
         <label for="isTrue">{{isTrue}}</label>
         <hr>
+        <h3>多选框绑定数组</h3>
         <p>
             <input type="checkbox" value="jsPang" id="jsPang" v-model="webNames">
             <label for="jsPang">jsPang</label>    
@@ -40,6 +41,15 @@
             <label for="jsPang">panpan</label>    
         </p>
         <p>{{webNames}}</p>
+        <hr>
+        <h3>单选框绑定</h3>
+        <p>
+            <input type="radio" id="one" value="男" v-model="sex">
+            <label for="one">男</label>
+            <input type="radio" id="two" value="女" v-model="sex">
+            <label for="two">女</label>
+            <p>你选择的性别是：{{sex}}</p>
+        </p>
     </div>
     <script type="text/javascript">
         var app = new Vue({
@@ -47,7 +57,8 @@
             data:{
                 message:'hello world!',
                 isTrue:true,
-                webNames:[]
+                webNames:[],
+                sex:'男'
             }
         })
     </script>

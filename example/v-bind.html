@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind实例</title>
+    <script type="text/javascript" src="../assets/js/vue.js"></script>
+</head>
+<body>
+    <h1>v-bind实例</h1>
+    <hr>
+    <div id="app">
+        <p>
+            <img v-bind:src="imgSrc"/><br>
+        </p> 
+        <p>
+            <a :href="webUrl" target="_blank">第二基金</a>
+        </p> 
+        <hr>
+        <div :class="className">
+            1、绑定Class
+        </div>
+        <div :class="{classA:isOK}">
+                2、绑定Class中的判断
+        </div>
+        <div :class="[classA,classB]">
+                3、绑定Class中的数组
+        </div>
+        <div :class="isOK?classA:classB">
+                4、绑定Class中的三元运算符111
+        </div>
+        <hr>
+        <div>
+            <input type="checkbox" id="isOK" v-model="isOK">
+            <label for="isOK">isOK={{isOK}}</label>
+        </div>
+    </div>
+    <style>
+        .classA{
+            color:red;
+        }
+        .classB{
+            font-size: 150%;
+        }
+    </style>
+
+    <script type="text/javascript">
+        var app = new Vue({
+            el:'#app',
+            data:{
+                imgSrc:"https://img-blog.csdn.net/20170302125256076?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQveHFub2Rl/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast",
+                webUrl:"http://www.d2jj.com",
+                className:"classA",
+                isOK:false,
+                classA:"classA",
+                classB:"classB"
+            }
+        })
+</script>
+</body>
+</html>
